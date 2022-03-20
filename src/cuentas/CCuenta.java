@@ -5,7 +5,10 @@
 
 package cuentas;
 
-
+/**
+ *
+ * @author anama
+ */
 public class CCuenta {
 
  
@@ -15,11 +18,20 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
-
+    /**
+     * Constructor vacío
+     */
     public CCuenta()
     {
     }
 
+    /**
+     * Constructor con parámetros por defecto
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -27,23 +39,38 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Método asignar nombre
+     * @param nom
+     */
     public void asignarNombre(String nom)
     {
         setNombre(nom);
     }
 
+    /**
+     * Método obtener nombre
+     * @return
+     */
     public String obtenerNombre()
     {
         return getNombre();
     }
 
-
+    /**
+     * Método que nos devuelve el saldo
+     * @return
+     */
     public double estado()
     {
         return getSaldo();
     }
 
-
+    /**
+     * Método ingresar una cantidad y actualiza el saldo
+     * @param cantidad
+     * @throws Exception
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -51,6 +78,11 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Método retirar una cantidad y actualiza el saldo
+     * @param cantidad
+     * @throws Exception
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
@@ -60,28 +92,45 @@ public class CCuenta {
         setSaldo(getSaldo() - cantidad);
     }
 
-
+    /**
+     * Método que nos devuelve el número de cuenta
+     * @return
+     */
     public String obtenerCuenta()
     {
         return getCuenta();
     }
 
-
+    //Métodos getter y setter
+    
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
-
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
-
+    /**
+     *
+     * @param tipoInterés
+     */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
